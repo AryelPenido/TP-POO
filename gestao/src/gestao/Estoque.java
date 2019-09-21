@@ -21,10 +21,12 @@ public class Estoque {
           System.out.println("id:"+Estoque.produtos.get(i).id);
           System.out.println("descrição:"+Estoque.produtos.get(i).descricao);
           System.out.println("categoria:"+Estoque.produtos.get(i).categoria);
+          System.out.println("Tipo:"+Estoque.produtos.get(i).tipo);
           System.out.println("quantidade:"+Estoque.qtdestoque.get(i));
           System.out.println("");
       }
   }
+  
    
    
    public ArrayList Get_produtoscadastrados(){

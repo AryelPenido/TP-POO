@@ -13,8 +13,8 @@ public class Teste {
      */
     public static void main(String[] args) {
         System.out.println("gestão");
-        gestao.Produto p1 = new gestao.Produto("xx", "cd de musicas", 3, "eletronicos");
-        gestao.Produto p2 = new gestao.Produto("xy", "chocolate branco", 2, "alimento");
+        gestao.Produto p1 = new gestao.Produto("xx", "cd de musicas", 3, "eletronicos","CD");
+        gestao.Produto p2 = new gestao.Produto("xy", "chocolate branco", 2, "alimento","Doce");
         gestao.Estoque.Imprime();
         
     }
