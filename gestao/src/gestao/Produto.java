@@ -10,5 +10,23 @@ package gestao;
  * @author aryels
  */
 public class Produto {
+    String id;
+    String descricao;
+    int qtd;
+    String categoria;
+    //classe tipo
+    
+    public Produto(String id,String descricao,int qtd,String categoria){
+        this.id = id;
+        this.descricao = descricao;
+        this.qtd = qtd;
+        this.categoria = categoria;
+        gestao.Estoque.addEstoque(this);
+    }
+    
+    
+    
+    
+    
     
 }

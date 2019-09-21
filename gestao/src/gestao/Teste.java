@@ -4,18 +4,19 @@
  * and open the template in the editor.
  */
 package gestao;
+import java.util.ArrayList;
 
-/**
- *
- * @author aryels
- */
 public class Teste {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        System.out.println("gestão");
+        gestao.Produto p1 = new gestao.Produto("xx", "cd de musicas", 3, "eletronicos");
+        gestao.Produto p2 = new gestao.Produto("xy", "chocolate branco", 2, "alimento");
+        gestao.Estoque.Imprime();
+        
     }
     
 }
