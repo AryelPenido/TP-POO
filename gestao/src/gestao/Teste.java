@@ -16,7 +16,7 @@ public class Teste {
         //PacoteProduto.Produto p1 = new PacoteProduto.Produto("xx", "cd de musicas", 3, "eletronicos","CD");
         //PacoteProduto.Produto p2 = new PacoteProduto.Produto("xy", "chocolate branco", 2, "alimento","Doce");
         //PacoteProduto.Estoque.Imprime();
-        gestao.Cliente e1 = new gestao.Cliente("cl1", "144167", "aryel", "aryelpenido@gmail", "25336200");
+        PacoteCliente.Cliente e1 = new PacoteCliente.Cliente("cl1", "144167", "aryel", "aryelpenido@gmail", "25336200");
         
         
     }
