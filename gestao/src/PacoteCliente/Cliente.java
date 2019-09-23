@@ -1,108 +1,72 @@
 package PacoteCliente;
-import java.util.Scanner;
+//import java.util.Scanner;
 import java.util.ArrayList;
-
+import java.util.Map;
 
 public class Cliente {
     String codCliente;
     String CPF;
     String nome;
-    String email;
+    static String email;
     private String senha;
-    ArrayList <Endereço> endereço = new ArrayList();
+    ArrayList <Cliente> listaCliente = new ArrayList();
+    ArrayList <Endereço> endereço = new ArrayList<>();
     
     public Cliente( String codCliente,String CPF,String nome,String email,String senha){
         
         this.codCliente = codCliente;
         this.nome = nome;
         this.senha = senha;
-        SetCpf(CPF);
-        SetEmail(email);
-        SetEndereço();
+        this.CPF = CPF;
+        this.email = email;
     }
+    
     public void SetNome(String nome){
         this.nome= nome;
     }
     
-    public void SetCpf(String CPF){
-        boolean x = false;
-        Scanner s = new Scanner(System.in);
-        do{
-            x=VerificaCpf(CPF);
-            if(x == false){
-                System.out.println("Entre com CPF valido:");
-                CPF = s.next();
-            }
-        }while(x==false);
-        
+    public void SetcodCliente(String codCleinte){
+        this.codCliente = codCliente;
     }
-    
-    public boolean VerificaCpf(String CPF){
-     if(CPF.length()<11){
-         System.out.println("CPF inválido");
-         return false;
-     }
-     else{
-         this.CPF = CPF;
-         return true;
-     } 
- }
     
     public void SetSenha(String senha){
-        this.senha=senha;
+        this.senha = senha;
     }
     
-    public void SetEmail(String email){
-       boolean x = false;
-       Scanner s = new Scanner(System.in);
-       do{
-            x = VerificaEmail(email); 
-            if(x == false){
-                System.out.println("Entre com um email valido");
-                email = s.next();
-            }
-        }while(x == false);
-      
+    
+    public void SetCpf(String CPF){
+        this.CPF = CPF;
         
     }
     
-public boolean VerificaEmail(String email){
+     
+    public static void SetEmail(String email){
+       Cliente.email = email;    
+    }
+    
+public void VerificaEmail(String email){
      if(!email.contains("@") || !email.contains(".com")){
             System.out.println("email invalido");
-            return false;
+   
         }
         else{
-            this.email = email;
-            return true;
+            SetEmail(email);
         }
+ }
+ 
+    public  void  VerificaCpf(String CPF){
+    if(CPF.length()<11){
+        System.out.println("CPF inválido");
+        
+    }
+    else{
+        SetCpf(CPF);
+        
+    } 
 }
 
-public void SetEndereço(){
-    Scanner s = new Scanner(System.in);
-    String CEP;
-    String rua;
-    int numero;
-    String bairro;
-    String cidade;
-    String estado;
-    String pais;
-    //System.out.println("Novo endereço?");
-    System.out.println("pais:");
-    pais = s.next();
-    System.out.println("estado:");
-    estado = s.next();
-    System.out.println("cidade:");
-    cidade = s.next();
-     System.out.print("bairro:");
-    bairro = s.next();
-    System.out.print("rua:");
-    rua = s.next();
-    System.out.print("CEP:");
-    CEP = s.next();
-    System.out.print("numero:");
-    numero = s.nextInt();
-    PacoteCliente.Endereço e1 = new PacoteCliente.Endereço(CEP, rua, numero, bairro, cidade, estado, pais);
-    endereço.add(e1);
-}
+/*public void AdcEndereço(){
+    endereço.add(PacoteClienteGetEndereço());
+}*/
 
 }

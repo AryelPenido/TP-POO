@@ -23,8 +23,8 @@ public class Endereço {
         this.pais = pais;
     }
     
-    /*public Endereço GetEndereço(){
-        return ;
-    }*/
+    public  Endereço GetEndereço(){
+        return this;
+    }
     
 }
