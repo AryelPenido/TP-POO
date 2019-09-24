@@ -7,9 +7,8 @@ public class Cliente {
     String codCliente;
     String CPF;
     String nome;
-    static String email;
+    String email;
     private String senha;
-    ArrayList <Cliente> listaCliente = new ArrayList();
     ArrayList <Endereço> endereço = new ArrayList<>();
     
     public Cliente( String codCliente,String CPF,String nome,String email,String senha){
@@ -40,30 +39,11 @@ public class Cliente {
     }
     
      
-    public static void SetEmail(String email){
-       Cliente.email = email;    
+    public void SetEmail(String email){
+       this.email = email;    
     }
     
-public void VerificaEmail(String email){
-     if(!email.contains("@") || !email.contains(".com")){
-            System.out.println("email invalido");
-   
-        }
-        else{
-            SetEmail(email);
-        }
- }
- 
-    public  void  VerificaCpf(String CPF){
-    if(CPF.length()<11){
-        System.out.println("CPF inválido");
-        
-    }
-    else{
-        SetCpf(CPF);
-        
-    } 
-}
+
 
 /*public void AdcEndereço(){
     endereço.add(PacoteClienteGetEndereço());

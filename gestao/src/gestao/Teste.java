@@ -13,7 +13,6 @@ public class Teste {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("gestão");
         Scanner s = new Scanner(System.in);
         boolean x = false;
         String CPF;
@@ -26,24 +25,15 @@ public class Teste {
         String pais;
         //PacoteProduto.Produto p1 = new PacoteProduto.Produto("xx", "cd de musicas", 3, "eletronicos","CD");
         //PacoteProduto.Produto p2 = new PacoteProduto.Produto("xy", "chocolate branco", 2, "alimento","Doce");
-        PacoteProduto.Estoque.Imprime();
-        CPF = s.next();
-        do{
-           if(x=(PacoteCliente.Cliente.VerificaCpf(CPF))){
-             PacoteCliente.Cliente c1 = new PacoteCliente.Cliente("cl1", CPF, "aryel", "aryelpenido@gmail", "25336200"); 
-        }
-           else{
-               System.out.println("Novo CPF:");
-               CPF = s.next();
-           }
         
-        }while( x==false);
-        
+        PacoteCliente.CadastroCliente cc = new PacoteCliente.CadastroCliente();
+        cc.SetCliente("cl1", "14416791622", "joao", "joaopenido@gmail.com", "25336200");
+        cc.SetCliente("cl2", "14416791622", "aryel", "joaopenido@gmail.com", "25336200");
        
         //PacoteCliente.Cliente c2 = new PacoteCliente.Cliente("cl1", "14416791622", "joao", "joaopenido@gmail", "25336200");
         //CPF = s.next();
         
-        System.out.println("Novo endereço?");
+        /*System.out.println("Novo endereço?");
         System.out.println("pais:");
         pais = s.next();
         System.out.println("estado:");
@@ -59,7 +49,7 @@ public class Teste {
         System.out.print("numero:");
         numero = s.nextInt();
         PacoteCliente.Endereço e1 = new PacoteCliente.Endereço(CEP, rua, numero, bairro, cidade, estado, pais);
-
+        */
         
         
     }
