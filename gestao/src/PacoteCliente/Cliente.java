@@ -4,20 +4,21 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Cliente {
-    String codCliente;
-    String CPF;
-    String nome;
-    String email;
+    private String codCliente;
+    private String CPF;
+    private String nome;
+    private String email;
     private String senha;
     ArrayList <Endereço> endereço = new ArrayList<>();
     
-    public Cliente( String codCliente,String CPF,String nome,String email,String senha){
+    public Cliente( String codCliente,String CPF,String nome,String email,String senha,Endereço e){
         
         this.codCliente = codCliente;
         this.nome = nome;
         this.senha = senha;
         this.CPF = CPF;
         this.email = email;
+        endereço.add(e);
     }
     
     public void SetNome(String nome){
@@ -43,10 +44,15 @@ public class Cliente {
        this.email = email;    
     }
     
+    
+public void AdcEndereço(Endereço e){
+    endereço.add(e);
+}
 
 
-/*public void AdcEndereço(){
-    endereço.add(PacoteClienteGetEndereço());
-}*/
+
+
+
+
 
 }
