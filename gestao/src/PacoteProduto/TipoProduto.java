@@ -8,10 +8,7 @@ package PacoteProduto;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- *
- * @author aryels
- */
+
 public class TipoProduto {
     
     static ArrayList tipo = new ArrayList();
@@ -68,6 +65,9 @@ public class TipoProduto {
           System.out.println("Caracteristicas tipo:"+TipoProduto.tipo.get(i));
       }
   }
+  
+  
+  
 }
     
 

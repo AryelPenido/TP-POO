@@ -50,7 +50,18 @@ public void AdcEndereço(Endereço e){
 }
 
 
-
+public void ImprimeCliente(){
+      System.out.println("");
+      System.out.println("codCliente: "+codCliente);
+      System.out.println("nome: "+nome);
+      System.out.println("CPF: "+CPF);
+      System.out.println("email: "+email);
+      System.out.println("\nENDEREÇO");
+      for (Endereço end : endereço) {
+           end.ImprimeEndereço();
+        }
+        
+  }
 
 
 

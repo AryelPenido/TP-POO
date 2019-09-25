@@ -76,20 +76,18 @@ public class CadastroCliente {
             return true;
         }
  }
-    public ArrayList GetlistaCliente(){
-        for (Cliente listaCliente1 : listaCliente) {
-            return PacoteCliente.Cliente.email;
-    }   return null;
+public void ListarClientes(){
+        
+        for (Cliente cliente : listaCliente) {
+           cliente.ImprimeCliente();
+        }
+        
 }
 
-    public void ListarClientes(){
-        
-        for (Cliente listaCliente1 : listaCliente) {
-            System.out.println("Clientes:"+listaCliente);
-        }
+    
     
 }
  
     
-}
+
 
