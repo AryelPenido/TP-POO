@@ -20,7 +20,7 @@ public class Estoque {
    
   /* protected static void addTipoaEstoque(PacoteProduto.TipoProduto tp){
        tpo.add(tp);
-   }*/
+   }
    
   public static void Imprime(){//mover pra gestão?
       
@@ -33,14 +33,7 @@ public class Estoque {
           System.out.println("quantidade:"+Estoque.qtdestoque.get(i));
           System.out.println("");
       }
-  }
-  
-   
-   
-   public ArrayList Get_produtoscadastrados(){
-       return produtos;
-   }
-   
+  }*/
    
    public void ListarProdutos(){
         System.out.println("Lista de produtos");

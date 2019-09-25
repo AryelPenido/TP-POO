@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Cliente {
-    private String codCliente;
-    private String CPF;
+    private final String codCliente;
+    private final String CPF;
     private String nome;
     private String email;
     private String senha;
@@ -44,24 +44,39 @@ public class Cliente {
        this.email = email;    
     }
     
+
+    public String Getnome(){
+        return nome;
+    }
+    public String GetCPF(){
+        return CPF;
+    }
     
-public void AdcEndereço(Endereço e){
-    endereço.add(e);
-}
+    public String GetcodCliente(){
+        return codCliente;
+    }
+    
+    public String GetEmail(){
+        return email;
+    }
+    
+    public void AdcEndereço(Endereço e){
+        endereço.add(e);
+    }
 
 
-public void ImprimeCliente(){
-      System.out.println("");
-      System.out.println("codCliente: "+codCliente);
-      System.out.println("nome: "+nome);
-      System.out.println("CPF: "+CPF);
-      System.out.println("email: "+email);
-      System.out.println("\nENDEREÇO");
-      for (Endereço end : endereço) {
-           end.ImprimeEndereço();
-        }
-        
-  }
+    public void ImprimeCliente(){
+          System.out.println("");
+          System.out.println("codCliente: "+codCliente);
+          System.out.println("nome: "+nome);
+          System.out.println("CPF: "+CPF);
+          System.out.println("email: "+email);
+          System.out.println("\nENDEREÇO");
+          for (Endereço end : endereço) {
+               end.ImprimeEndereço();
+            }
+
+      }
 
 
 

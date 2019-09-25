@@ -1,15 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package PacoteCliente;
 import java.util.ArrayList;
 import java.util.HashMap;
-/**
- *
- * @author aryels
- */
+import java.util.Scanner;
+
 public class CadastroCliente {
     
     ArrayList <Cliente> listaCliente = new ArrayList();
@@ -82,6 +76,31 @@ public void ListarClientes(){
            cliente.ImprimeCliente();
         }
         
+}
+
+
+public void AlterarCliente(String CPF,String alt,String dado){
+    boolean x;
+    for (Cliente cliente : listaCliente) {
+           if(cliente.GetCPF().equals(CPF)){
+               if(alt.equalsIgnoreCase("nome")){
+                   cliente.SetNome(dado);
+                   System.out.println("nome alterado");
+               }
+               if(alt.equalsIgnoreCase("email")){
+                   x = ValidaEmail(dado);
+                   
+                   if(x == true){
+                       cliente.SetEmail(dado);
+                       System.out.println("email alterado");
+                   }
+               }
+               if(alt.equalsIgnoreCase("senha")){
+                   cliente.SetSenha(senha);
+                   System.out.println("senha alterada");
+               }
+           }
+        } 
 }
 
     

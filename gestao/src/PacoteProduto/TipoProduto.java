@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package PacoteProduto;
 
 import java.util.ArrayList;
@@ -16,7 +12,7 @@ public class TipoProduto {
     
    
     public TipoProduto(String t){
-       tipo.add(t);
+       //tipo.add(t);
        if(t.equalsIgnoreCase("Cd")){
        TipoCd(tipo);
        }
@@ -42,7 +38,7 @@ public class TipoProduto {
             anoLançamento = s.nextInt();
             tipo.add(anoLançamento);
         }
-        Imprimetipo();
+        //Imprimetipo();
      
 }
     private void TipoDoce( ArrayList tipo){
@@ -56,7 +52,7 @@ public class TipoProduto {
         System.out.println("Data de validade");
         data = s.next();
         tipo.add(data);
-        Imprimetipo();
+        //Imprimetipo();
     }
     
     
