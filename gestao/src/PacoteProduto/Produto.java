@@ -16,6 +16,7 @@ public class Produto {
     int qtd;
     String categoria;
     String tipo;
+    ArrayList <TipoProduto> tp = new ArrayList<>();
     
     public Produto(String id,String descricao,int qtd,String categoria,String tipo){
         this.id = id;
@@ -23,21 +24,34 @@ public class Produto {
         this.qtd = qtd;
         this.categoria = categoria;
         PacoteProduto.TipoProduto t = new PacoteProduto.TipoProduto(tipo);
-        adc();
+        tp.add(t);
+       // adc();
         
        // TipoProduto t = new TipoProduto(tipo);
     }
     
-    public void adc(){
-     PacoteProduto.Estoque.addEstoque(this);
+    
+    public String  Getid(){
+        return id;
     }
     
+    public void SetQtd(int qtd){
+        this.qtd = qtd;
+    }
+    
+   /* public static void adc(){
+     PacoteProduto.Estoque.addEstoque(this);
+    }*/
+    
    public void ImprimeProduto(){
+       System.out.println("Caracteristicas produto");
        System.out.println("idproduto: "+id);
        System.out.println("descricao: "+descricao);
        System.out.println("qtd: "+qtd);
        System.out.println("categoria: "+categoria);
-       
+       for (TipoProduto tpp : tp) {
+               tpp.Imprimetipo();
+            }
    }
     
     

@@ -2,7 +2,7 @@
 package PacoteCliente;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
+
 
 public class CadastroCliente {
     
@@ -55,7 +55,6 @@ public class CadastroCliente {
     } 
 
 }
-  
     
     public boolean ValidaEmail(String email){
      if(!email.contains("@") || !email.contains(".com")){
@@ -70,6 +69,7 @@ public class CadastroCliente {
             return true;
         }
  }
+    
 public void ListarClientes(){
         
         for (Cliente cliente : listaCliente) {

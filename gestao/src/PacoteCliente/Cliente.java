@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Cliente {
-    private final String codCliente;
-    private final String CPF;
+    private String codCliente;
+    private String CPF;
     private String nome;
     private String email;
     private String senha;
