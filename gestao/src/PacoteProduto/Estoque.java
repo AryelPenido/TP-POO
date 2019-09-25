@@ -40,7 +40,13 @@ public class Estoque {
    public ArrayList Get_produtoscadastrados(){
        return produtos;
    }
-    
-    
-    
+   
+   
+   public void ListarProdutos(){
+        System.out.println("Lista de produtos");
+        for (Produto prod : produtos) {
+           prod.ImprimeProduto();
+        }
+       
+}
 }

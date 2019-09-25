@@ -32,7 +32,13 @@ public class Produto {
      PacoteProduto.Estoque.addEstoque(this);
     }
     
-   
+   public void ImprimeProduto(){
+       System.out.println("idproduto: "+id);
+       System.out.println("descricao: "+descricao);
+       System.out.println("qtd: "+qtd);
+       System.out.println("categoria: "+categoria);
+       
+   }
     
     
     /*public void SetTipo(String tipo){
