@@ -1,5 +1,5 @@
 # TP-POO
-Primeiro Trabalho da disciplina de Programação Orientada a Objeto
+Primeiro Trabalho da disciplina de Programação Orientada a Objetos
 
 
 Grupo:
