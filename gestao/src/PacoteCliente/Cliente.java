@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Cliente {
-    private String codCliente;
+     String codCliente;
     private String CPF;
     private String nome;
     private String email;
@@ -54,7 +54,7 @@ public class Cliente {
     
     public String GetcodCliente(){
         return codCliente;
-    }
+    }//throw new IllegalStateException
     
     public String GetEmail(){
         return email;
@@ -78,6 +78,14 @@ public class Cliente {
 
       }
 
+    public void ImprimeClienteVenda(){
+          System.out.println("");
+          System.out.println("codCliente: "+codCliente);
+          System.out.println("nome: "+nome);
+          System.out.println("CPF: "+CPF);
+          System.out.println("email: "+email);
+          
+      }
 
 
 

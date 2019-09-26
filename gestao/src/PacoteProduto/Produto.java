@@ -14,14 +14,16 @@ public class Produto {
     String id;
     String descricao;
     int qtd;
+    double preco;
     String categoria;
     String tipo;
     ArrayList <TipoProduto> tp = new ArrayList<>();
     
-    public Produto(String id,String descricao,int qtd,String categoria,String tipo){
+    public Produto(String id,String descricao,int qtd,double preco, String categoria,String tipo){
         this.id = id;
         this.descricao = descricao;
         this.qtd = qtd;
+        this.preco = preco;
         this.categoria = categoria;
         PacoteProduto.TipoProduto t = new PacoteProduto.TipoProduto(tipo);
         tp.add(t);
@@ -30,7 +32,9 @@ public class Produto {
        // TipoProduto t = new TipoProduto(tipo);
     }
     
-    
+    public double GetPreco(){
+        return preco;
+    }
     public String  Getid(){
         return id;
     }

@@ -37,7 +37,17 @@ public class CadastroCliente {
 
     }
     
-   
+    public Cliente getCliente ( String codCliente){
+        for (Cliente cliente : listaCliente){
+            if (cliente.GetcodCliente().equalsIgnoreCase(codCliente)){
+                return cliente;
+            }
+            else{
+                System.out.println("Cliente inesistente!");
+            }
+        }
+        return null;
+    }
 
 
     public boolean  ValidaCPF(String CPF){
