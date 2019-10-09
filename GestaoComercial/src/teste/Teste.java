@@ -1,21 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package teste;
 
-/**
- *
- * @author hillison
- */
+import Controller.ClienteControle;
+import Controller.ProdutoControle;
+import Controller.VendasControle;
+import Model.Entidade.Endereço;
+import Model.Entidade.Produto;
+import java.util.ArrayList;
+
 public class Teste {
 
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+       ArrayList<Produto> prodvendido = new ArrayList<Produto>();
+       ProdutoControle pp = new ProdutoControle();
+       pp.insere("aaa", "produto 1", 2, 26.99, "teste", "testtt");
+       pp.insere("bbb", "produto2", 1, 10.5, "test", "teste2");
+       prodvendido.add(pp.busca("bbb"));
+       Endereço e = new Endereço("32280360","Rua rio grande",601,"Novo Riacho","Contagem","MG","Brasil");
+       ClienteControle cc = new ClienteControle();
+       cc.SetCliente("sxd", "14416791623", "Aryel", "aryelpenido@gmail.com", "25336200", e);
+       VendasControle vv = new VendasControle();
+       vv.Insere("sxd", e, "joao", "pedro", "jesus", prodvendido);
+       cc.ListaClienteControle();
+       vv.ListaTodas();
+        
+        
     }
     
 }

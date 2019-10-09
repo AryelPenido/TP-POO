@@ -47,4 +47,21 @@ public class Produto {
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
+
+    
+    
+    public void ImprimeProduto(){
+       System.out.println("Caracteristicas produto");
+       System.out.println("idproduto: "+id);
+       System.out.println("descricao: "+descricao);
+       System.out.println("qtd: "+qtd);
+       System.out.println("categoria: "+categoria);
+        System.out.println("Tipo: "+tipo);
+   }
+
+
+
+
+
+
 }
