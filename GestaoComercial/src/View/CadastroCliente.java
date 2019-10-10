@@ -5,12 +5,20 @@
  */
 package View;
 
+import Controller.ClienteControle;
+import Model.Entidade.Cliente;
+import Model.Entidade.Endereço;
+import java.util.ArrayList;
+
 /**
  *
  * @author hillison
  */
 public class CadastroCliente extends javax.swing.JInternalFrame {
-
+    
+    ClienteControle cc = new ClienteControle();
+    private ArrayList <Cliente> ListaCliente = new ArrayList<>();
+    
     /**
      * Creates new form CadastroCliente
      */
@@ -36,9 +44,9 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
         nome = new javax.swing.JTextField();
         email = new javax.swing.JTextField();
         senha = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        Salvar = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
+        NovoEd = new javax.swing.JButton();
         cpf = new javax.swing.JFormattedTextField();
         jComboBox1 = new javax.swing.JComboBox();
 
@@ -61,11 +69,26 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
             }
         });
 
-        jButton1.setText("Salvar");
+        Salvar.setText("Salvar");
+        Salvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SalvarActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Endereços");
 
-        jButton2.setText("Novo Endereço");
+        NovoEd.setText("Novo Endereço");
+        NovoEd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NovoEdMouseClicked(evt);
+            }
+        });
+        NovoEd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NovoEdActionPerformed(evt);
+            }
+        });
 
         try {
             cpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
@@ -116,10 +139,10 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
                                             .addComponent(email)))))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addComponent(jButton2))
+                                .addComponent(NovoEd))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(194, 194, 194)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -145,13 +168,13 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
                     .addComponent(jLabel5)
                     .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(NovoEd)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Salvar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -162,13 +185,57 @@ public class CadastroCliente extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_idActionPerformed
 
+    private void SalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalvarActionPerformed
+       String cod = id.getText();
+       String CPF = cpf.getText();
+       String Nome = nome.getText();
+       String Email = email.getText();
+       String Senha = senha.getText();
+       Endereço e = new Endereço("32","rua",601,"novo","contagem","mg","brasil");
+       cc.SetCliente(cod, CPF, Nome, Email, Senha, e);
+       
+       //tabela
+       cc.ListaClienteControle();
+       
+       
+       /*
+        
+        Produto p = new Produto(null, null, 0, null, null, null);
+
+        p = pc.insere(codigo,descricao, qtd, preco, categoria, tipo);
+        
+        System.out.println(p.getId()+": "+p.getDescricao()+" = R$"+p.getPreco());
+        DefaultTableModel dtmProdutos = (DefaultTableModel) tbProdutos.getModel();
+        
+        dtmProdutos.setNumRows(0);
+        //dtmProdutos.addRow(new Object[]{p.getId(),p.getDescricao(),p.getCategoria(),p.getTipo(),p.getPreco(), p.getQtd()});
+        ProdutoDAO pdao = new ProdutoDAO();
+        ListaProdutos = pdao.ListarTodos();
+        for (Produto p1 : ListaProdutos) {
+            dtmProdutos.addRow(new Object[]{p1.getId(),p1.getDescricao(),p1.getCategoria(),p1.getTipo(),p1.getPreco(), p1.getQtd()});
+            
+        }
+        tbProdutos.setModel(dtmProdutos);
+        
+        dtmProdutos.setNumRows(0);
+    }    */                                            // TODO add your handling code here:
+    }//GEN-LAST:event_SalvarActionPerformed
+
+    private void NovoEdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NovoEdMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NovoEdMouseClicked
+
+    private void NovoEdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NovoEdActionPerformed
+       new NovoEndereço().setVisible(true);
+    }//GEN-LAST:event_NovoEdActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton NovoEd;
+    private javax.swing.JButton Salvar;
     private javax.swing.JFormattedTextField cpf;
     private javax.swing.JTextField email;
     private javax.swing.JTextField id;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

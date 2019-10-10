@@ -60,7 +60,7 @@ public class TelaInicial extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setText("Pesquisar Cleinte");
+        jMenuItem2.setText("Pesquisar Cliente");
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
