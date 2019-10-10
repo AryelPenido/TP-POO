@@ -18,7 +18,7 @@ public class ProdutoDAO {
     
     public Produto Busca (String id){
         for (Produto p : ListaProdutos){
-            if ( p.GetId().equals(id)){
+            if ( p.getId().equals(id)){
                 return p;
             }
         }
@@ -38,7 +38,7 @@ public class ProdutoDAO {
                 p.setDescricao(descricao);
             }
             if (preco != null){
-                p.SetPreco(preco);
+                p.setPreco(preco);
             }
             return p;
         }
@@ -48,7 +48,7 @@ public class ProdutoDAO {
     public Produto AlteraQtd(String id, int qtd){
         Produto p = Busca(id);
         if (p != null){
-            p.SetQtd(qtd);
+            p.setQtd(qtd);
             return p;
         }
         return null;

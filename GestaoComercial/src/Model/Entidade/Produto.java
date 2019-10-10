@@ -8,12 +8,12 @@ import java.util.ArrayList;
  * @author aryels
  */
 public class Produto {
-    String id;
-    String descricao;
-    int qtd;
-    Double preco;
-    String categoria;
-    String tipo;
+    private String id;
+    private String descricao;
+    private int qtd;
+    private Double preco;
+    private String categoria;
+    private String tipo;
     
     public Produto(String id,String descricao,int qtd,Double preco, String categoria,String tipo){
         this.id = id;
@@ -23,23 +23,7 @@ public class Produto {
         this.categoria = categoria;
         this.tipo = tipo;
     }
-    
-    public double GetPreco(){
-        return preco;
-    }
-    
-    public String  GetId(){
-        return id;
-    }
-    
-    public void SetQtd(int qtd){
-        this.qtd = qtd;
-    }
-    
-    public void SetPreco(double preco){
-        this.preco = preco;
-    }
-    
+        
     public String getDescricao() {
         return descricao;
     }
@@ -49,19 +33,51 @@ public class Produto {
     }
 
     
+    public String getId() {
+        return id;
+    }
+
+    public int getQtd() {
+        return qtd;
+    }
+
+    public void setQtd(int qtd) {
+        this.qtd = qtd;
+    }
+
+    public Double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(Double preco) {
+        this.preco = preco;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
     
+        
     public void ImprimeProduto(){
        System.out.println("Caracteristicas produto");
-       System.out.println("idproduto: "+id);
-       System.out.println("descricao: "+descricao);
-       System.out.println("qtd: "+qtd);
-       System.out.println("categoria: "+categoria);
-        System.out.println("Tipo: "+tipo);
+       System.out.println("idproduto: "+getId());
+       System.out.println("descricao: "+getDescricao());
+       System.out.println("qtd: "+getQtd());
+       System.out.println("categoria: "+getCategoria());
+        System.out.println("Tipo: "+getTipo());
    }
-
-
-
-
 
 
 }

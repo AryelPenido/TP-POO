@@ -7,6 +7,9 @@ package View;
 
 import Controller.ProdutoControle;
 import Model.Entidade.Produto;
+import Model.Persistencia.ProdutoDAO;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author hillison
@@ -14,8 +17,7 @@ import Model.Entidade.Produto;
 public class CadastroProduto extends javax.swing.JInternalFrame {
     
     ProdutoControle pc = new ProdutoControle();
-    Produto p = new Produto(null, null, 0, null, null, null);
-
+    private ArrayList <Produto> ListaProdutos = new ArrayList<>();
     /**
      * Creates new form CadastroProduto
      */
@@ -45,7 +47,7 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
         tfqtd = new javax.swing.JSpinner();
         btSalvaProduto = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbProdutos = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         tfpreco = new javax.swing.JFormattedTextField();
 
@@ -72,7 +74,7 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -88,11 +90,9 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tbProdutos);
 
         jLabel6.setText("Preço");
-
-        tfpreco.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(java.text.NumberFormat.getCurrencyInstance())));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -117,7 +117,7 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
                                 .addGap(40, 40, 40)
                                 .addComponent(jLabel6)
                                 .addGap(18, 18, 18)
-                                .addComponent(tfpreco, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfpreco, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
@@ -164,18 +164,35 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
 
     private void btSalvaProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSalvaProdutoActionPerformed
         String codigo = tfid.getText();
-        Double preco = Double.parseDouble(tfpreco.getText());
+        String pr= tfpreco.getText();
+        Double preco = Double.parseDouble(pr);
         String descricao = tfdescricao.getText();
         String categoria = tfcategoria.getText();
         String tipo = tftipo.getText();
         int qtd = Integer.parseInt(tfqtd.getValue().toString());
         
-        
-        p = ProdutoControle.insere(codigo,descricao, qtd, preco, categoria, tipo);
+        Produto p = new Produto(null, null, 0, null, null, null);
 
+        p = pc.insere(codigo,descricao, qtd, preco, categoria, tipo);
+        
+        System.out.println(p.getId()+": "+p.getDescricao()+" = R$"+p.getPreco());
+        DefaultTableModel dtmProdutos = (DefaultTableModel) tbProdutos.getModel();
+        
+        dtmProdutos.setNumRows(0);
+        //dtmProdutos.addRow(new Object[]{p.getId(),p.getDescricao(),p.getCategoria(),p.getTipo(),p.getPreco(), p.getQtd()});
+        ProdutoDAO pdao = new ProdutoDAO();
+        ListaProdutos = pdao.ListarTodos();
+        for (Produto p1 : ListaProdutos) {
+            dtmProdutos.addRow(new Object[]{p1.getId(),p1.getDescricao(),p1.getCategoria(),p1.getTipo(),p1.getPreco(), p1.getQtd()});
+            
+        }
+        tbProdutos.setModel(dtmProdutos);
+        
+        dtmProdutos.setNumRows(0);
     }//GEN-LAST:event_btSalvaProdutoActionPerformed
 
-
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btSalvaProduto;
     private javax.swing.JLabel jLabel1;
@@ -185,7 +202,7 @@ public class CadastroProduto extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tbProdutos;
     private javax.swing.JTextField tfcategoria;
     private javax.swing.JTextField tfdescricao;
     private javax.swing.JTextField tfid;
