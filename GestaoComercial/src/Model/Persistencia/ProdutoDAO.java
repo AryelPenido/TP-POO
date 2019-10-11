@@ -31,27 +31,21 @@ public class ProdutoDAO {
         return p;
     }
     
-    public Produto Altera(String  id, String descricao, Double preco){
+    public Produto Altera(String  id, String descricao, Double preco, int qtd){
         Produto p = Busca(id);
         if (p != null){
-            if (descricao != null){
+            if (descricao != p.getDescricao()){
                 p.setDescricao(descricao);
             }
-            if (preco != null){
+            if (preco != p.getPreco()){
                 p.setPreco(preco);
+            }
+            if (qtd != p.getQtd()){
+                p.setQtd(qtd);
             }
             return p;
         }
         else return null;
-    }
-    
-    public Produto AlteraQtd(String id, int qtd){
-        Produto p = Busca(id);
-        if (p != null){
-            p.setQtd(qtd);
-            return p;
-        }
-        return null;
     }
     
     public ArrayList<Produto> ListarTodos(){
