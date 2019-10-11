@@ -9,6 +9,7 @@ import Controller.ClienteControle;
 import Controller.ProdutoControle;
 import Model.Entidade.Cliente;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -35,13 +36,15 @@ public class TelaInicial extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         Listar = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         filtro = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listartexto = new javax.swing.JTextArea();
         jPanel3 = new javax.swing.JPanel();
         Cod = new javax.swing.JLabel();
         id = new javax.swing.JTextField();
@@ -68,6 +71,16 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         pais = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel13 = new javax.swing.JLabel();
+        cpfaltera = new javax.swing.JTextField();
+        Rnome = new javax.swing.JRadioButton();
+        Remail = new javax.swing.JRadioButton();
+        Rsenha = new javax.swing.JRadioButton();
+        nomealtera = new javax.swing.JTextField();
+        emailaltera = new javax.swing.JTextField();
+        senhalatera = new javax.swing.JPasswordField();
+        jButton3 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,7 +90,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 540, Short.MAX_VALUE)
+            .addGap(0, 491, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -93,14 +106,11 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setText("Listar Produtos");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
         jLabel12.setText("Filtro por nome");
+
+        listartexto.setColumns(20);
+        listartexto.setRows(5);
+        jScrollPane1.setViewportView(listartexto);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -111,23 +121,26 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel12)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                         .addComponent(filtro)))
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(119, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(110, 110, 110))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(54, 54, 54)
+                .addContainerGap()
                 .addComponent(jLabel12)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(filtro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(116, 116, 116)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(189, Short.MAX_VALUE))
+                .addGap(81, 81, 81)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(250, Short.MAX_VALUE))
         );
 
         Listar.addTab("Listar", jPanel4);
@@ -214,7 +227,7 @@ public class TelaInicial extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(204, 204, 204)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(77, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,6 +279,76 @@ public class TelaInicial extends javax.swing.JFrame {
 
         Listar.addTab("CadastrarCliente", jPanel3);
 
+        jLabel13.setText("CPF");
+
+        Rnome.setText("Nome");
+
+        Remail.setText("Email");
+
+        Rsenha.setText("Senha");
+
+        jButton3.setText("Alterar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(102, 102, 102)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(Rsenha)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(senhalatera))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel13)
+                                .addComponent(Rnome))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(cpfaltera)
+                                .addComponent(nomealtera, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                            .addComponent(Remail)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(emailaltera, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(133, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(cpfaltera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Rnome)
+                    .addComponent(nomealtera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Remail)
+                    .addComponent(emailaltera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Rsenha)
+                    .addComponent(senhalatera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(209, Short.MAX_VALUE))
+        );
+
+        Listar.addTab("Alterar CLiente", jPanel2);
+
         jMenuBar1.setFont(new java.awt.Font("Ubuntu", 0, 36)); // NOI18N
         setJMenuBar(jMenuBar1);
 
@@ -273,7 +356,7 @@ public class TelaInicial extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Listar, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(Listar, javax.swing.GroupLayout.PREFERRED_SIZE, 499, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -286,34 +369,55 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // NovoEndereço nn = new NovoEndereço();
-       String cod = id.getText();
-       String CPF = cpf.getText();
-       String Nome = nome.getText();
-       String Email = email.getText();
-       String Senha = senha.getText();
-       String Cep = cep.getText();
-       String Rua  = rua.getText();
-       String Numero = numero.getText();
-       String Estado = estado.getText();
-       String Bairro = bairro.getText();
-       String Cidade = cidade.getText();
-       String Pais = pais.getText();
-       cc.SetCliente(cod, CPF, Nome, Email, Senha, Cep, Numero, Rua, Bairro, Cidade, Estado, Pais);
-       //System.out.println("Cliente Cadastrado");
-       //mensagem.setText("Cliente Cadastrado");//colocar direito + execeções
+        boolean x;
+        String cod = id.getText();
+        String CPF = cpf.getText();
+        String Nome = nome.getText();
+        String Email = email.getText();
+        String Senha = senha.getText();
+        String Cep = cep.getText();
+        String Rua  = rua.getText();
+        String Numero = numero.getText();
+        String Estado = estado.getText();
+        String Bairro = bairro.getText();
+        String Cidade = cidade.getText();
+        String Pais = pais.getText();
+        x = cc.SetCliente(cod, CPF, Nome, Email, Senha, Cep, Numero, Rua, Bairro, Cidade, Estado, Pais);
+        if(x == true){
+            JOptionPane.showMessageDialog(null,"Cliente Cadastrado com sucesso");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // String Nome = filtro.getText();
-       // if(cc.)
-            cc.ListaClienteControle();
-          
-           // cc.ListarClienteControle(Nome);
+        // if(cc.)
+        cc.ListaClienteControle();
+
+        // cc.ListarClienteControle(Nome);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-                pp.ListarTodos();   
-                //System.out.println("teste");// TODO add your handling code here:
+            boolean nb,emb,sb;
+            String CPF, alteração,dado;
+            CPF = cpfaltera.getText();
+            nb = Rnome.isSelected();
+            if(nb == true){
+                alteração = "nome";
+                dado = nomealtera.getText();
+                cc.AlterarClienteControle(cc, CPF, alteração, dado);
+            }
+            emb = Remail.isSelected();
+            if(emb == true){
+                alteração = "email";
+                dado = emailaltera.getText();
+                cc.AlterarClienteControle(cc, CPF, dado, dado);
+            }
+            sb = Rsenha.isSelected();
+            if(sb == true){
+                alteração = "senha";
+                dado = senhalatera.getText();
+                cc.AlterarClienteControle(cc, CPF, dado, dado);
+            }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     
@@ -357,11 +461,17 @@ public class TelaInicial extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cod;
     private javax.swing.JTabbedPane Listar;
+    private javax.swing.JRadioButton Remail;
+    private javax.swing.JRadioButton Rnome;
+    private javax.swing.JRadioButton Rsenha;
     private javax.swing.JTextField bairro;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JTextField cep;
     private javax.swing.JTextField cidade;
     private javax.swing.JFormattedTextField cpf;
+    private javax.swing.JTextField cpfaltera;
     private javax.swing.JTextField email;
+    private javax.swing.JTextField emailaltera;
     private javax.swing.JTextField estado;
     private javax.swing.JTextField filtro;
     private javax.swing.JTextField id;
@@ -372,6 +482,7 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -382,12 +493,17 @@ public class TelaInicial extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea listartexto;
     private javax.swing.JTextField nome;
+    private javax.swing.JTextField nomealtera;
     private javax.swing.JTextField numero;
     private javax.swing.JTextField pais;
     private javax.swing.JTextField rua;
     private javax.swing.JPasswordField senha;
+    private javax.swing.JPasswordField senhalatera;
     // End of variables declaration//GEN-END:variables
 }

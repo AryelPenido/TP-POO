@@ -7,6 +7,7 @@ import Model.Entidade.Cliente;
 import Model.Entidade.Endereço;
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.JOptionPane;
 
 
 public class ClienteDAO {
@@ -39,19 +40,22 @@ public class ClienteDAO {
            if(cliente.GetCPF().equals(CPF)){
                if(alt.equalsIgnoreCase("nome")){  //alteração será do nome?
                    cliente.SetNome(dado);
-                   System.out.println("nome alterado");
+                   //System.out.println("nome alterado");
+                   JOptionPane.showMessageDialog(null,"Nome alterado");
                }
               if(alt.equalsIgnoreCase("email")){
                    boolean x = cc.ValidaEmail(dado);
                    
                    if(x == true){
                        cliente.SetEmail(dado);
-                       System.out.println("email alterado");
+                       //System.out.println("email alterado");
+                        JOptionPane.showMessageDialog(null,"Nome alterado");
                    }
                }
                if(alt.equalsIgnoreCase("senha")){
                    cliente.SetSenha(dado);
-                   System.out.println("senha alterada");
+                  // System.out.println("senha alterada");
+                   JOptionPane.showMessageDialog(null,"Nome alterado");
                }
            }
         } 
