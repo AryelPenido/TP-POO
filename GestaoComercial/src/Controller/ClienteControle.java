@@ -16,15 +16,23 @@ public class ClienteControle {
     }
     
     
+    /*public void SetEndereço(String CPF,String CEP,String rua,int numero,String bairro,String cidade,String estado,String pais){
+        Endereço e = new Endereço(CEP,rua,numero,bairro,cidade,estado,pais);
+        ArrayList<Cliente>  cliente = cd.ListarClientes();
+        for (Cliente c : cliente) {
+            if(c.GetCPF().equals(CPF)){
+               c.SetEndereço(e);
+            }
+    }
+    }*/
     
-    
-    public void SetCliente(String codCliente,String CPF,String nome,String email,String senha,Endereço e){
+    public void SetCliente(String codCliente,String CPF,String nome,String email,String senha, String CEP,String numero,String Rua,String Bairro,String Cidade, String Estado, String Pais){
         x = ValidaCPF(CPF);
         y = ValidaEmail(email);
         
         if(x && y){
   
-            cd.ADDClienteDAO(codCliente, CPF, nome, email, senha, e);
+            cd.ADDClienteDAO( codCliente,CPF,nome,email,senha,CEP,numero,Rua,Bairro,Cidade,Estado,Pais);
     
         }
         else{
@@ -67,7 +75,16 @@ public void ListaClienteControle(){
    for (Cliente c : cliente) {
              c.ImprimeCliente();
    }
-    System.out.println("aqui");
+   
+}
+
+public void ListarClienteControle(String nome){
+    ArrayList<Cliente> cliente = cd.ListarClientes();
+    for(Cliente c: cliente){
+        if(c.Getnome().equalsIgnoreCase(nome)){
+            c.ImprimeCliente();
+        }
+    }
 }
   
 

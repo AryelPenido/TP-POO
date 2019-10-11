@@ -8,22 +8,43 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class Cliente {
-     String codCliente;
+    String codCliente;
     private String CPF;
     private String nome;
     private String email;
     private String senha;
-    ArrayList <Endereço> endereço = new ArrayList<>();
-    
-    public Cliente( String codCliente,String CPF,String nome,String email,String senha,Endereço e){
-        
+  // ArrayList <Endereço> endereço = new ArrayList<>();
+    private String CEP;
+    private String numero;
+    private String Rua;
+    private String Bairro;
+    private String Cidade;
+    private String Estado;
+    private String Pais;
+   
+    public Cliente( String codCliente,String CPF,String nome,String email,String senha, String CEP,String numero,String Rua,String Bairro,String Cidade, String Estado, String Pais){
+       
         this.codCliente = codCliente;
         this.nome = nome;
         this.senha = senha;
         this.CPF = CPF;
         this.email = email;
-        endereço.add(e);
+        this.CEP = CEP;
+        this.numero =numero;
+        this.Rua = Rua;
+        this.Bairro = Bairro;
+        this.Cidade = Cidade;
+        this.Estado = Estado;
+        this.Pais = Pais;
+        //endereço.add(e);
     }
+    
+    
+    /*public void SetEndereço(Endereço e){
+        System.out.println("endereço");
+        endereço.add(e);
+    }*/
+    
     
     public void SetNome(String nome){
         this.nome= nome;
@@ -64,9 +85,9 @@ public class Cliente {
         return email;
     }
     
-    public void AdcEndereço(Endereço e){
+   /* public void AdcEndereço(Endereço e){
         endereço.add(e);
-    }
+    }*/
 
 
     public void ImprimeCliente(){
@@ -75,11 +96,20 @@ public class Cliente {
           System.out.println("nome: "+nome);
           System.out.println("CPF: "+CPF);
           System.out.println("email: "+email);
-          System.out.println("\nENDEREÇO");
-          for (Endereço end : endereço) {
+          
+         System.out.println("\nENDEREÇO");
+         System.out.println("CEP:"+CEP);
+         System.out.println("Rua:"+Rua);
+         System.out.println("Numero: "+numero);
+         System.out.println("Bairros: "+Bairro);
+         System.out.println("Cidade: "+Cidade);
+         System.out.println("Estado: "+Estado);
+         System.out.println("País: "+Pais);
+         
+         /* for (Endereço end : endereço) {
                end.ImprimeEndereço();
             }
-
+*/
       }
 
   
