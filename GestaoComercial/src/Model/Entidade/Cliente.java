@@ -111,6 +111,57 @@ public class Cliente {
             }
 */
       }
+    
+     /**
+     * @return the CEP
+     */
+    public String getCEP() {
+        return CEP;
+    }
+
+    /**
+     * @return the numero
+     */
+    public String getNumero() {
+        return numero;
+    }
+
+    /**
+     * @return the Rua
+     */
+    public String getRua() {
+        return Rua;
+    }
+
+    /**
+     * @return the Bairro
+     */
+    public String getBairro() {
+        return Bairro;
+    }
+
+    /**
+     * @return the Cidade
+     */
+    public String getCidade() {
+        return Cidade;
+    }
+
+    /**
+     * @return the Estado
+     */
+    public String getEstado() {
+        return Estado;
+    }
+
+    /**
+     * @return the Pais
+     */
+    public String getPais() {
+        return Pais;
+    }
+
+  
 
   
 
