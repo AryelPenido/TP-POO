@@ -7,6 +7,7 @@ import Model.Entidade.Cliente;
 import Model.Entidade.Endereço;
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.swing.JOptionPane;
 
 
 public class ClienteDAO {
@@ -14,8 +15,8 @@ public class ClienteDAO {
    public  ArrayList <Cliente> listaCliente = new ArrayList();
     
     
-   public void ADDClienteDAO( String codCliente,String CPF,String nome,String email,String senha,Endereço e) {
-    Cliente c = new Cliente( codCliente,CPF,nome,email,senha,e);
+   public void ADDClienteDAO(String codCliente,String CPF,String nome,String email,String senha, String CEP,String numero,String Rua,String Bairro,String Cidade, String Estado, String Pais) {
+    Cliente c = new Cliente( codCliente,CPF,nome,email,senha,CEP,numero,Rua,Bairro,Cidade,Estado,Pais);
      listaCliente.add(c);
     
 }
@@ -39,19 +40,22 @@ public class ClienteDAO {
            if(cliente.GetCPF().equals(CPF)){
                if(alt.equalsIgnoreCase("nome")){  //alteração será do nome?
                    cliente.SetNome(dado);
-                   System.out.println("nome alterado");
+                   //System.out.println("nome alterado");
+                   JOptionPane.showMessageDialog(null,"Nome alterado");
                }
               if(alt.equalsIgnoreCase("email")){
                    boolean x = cc.ValidaEmail(dado);
                    
                    if(x == true){
                        cliente.SetEmail(dado);
-                       System.out.println("email alterado");
+                       //System.out.println("email alterado");
+                        JOptionPane.showMessageDialog(null,"Nome alterado");
                    }
                }
                if(alt.equalsIgnoreCase("senha")){
                    cliente.SetSenha(dado);
-                   System.out.println("senha alterada");
+                  // System.out.println("senha alterada");
+                   JOptionPane.showMessageDialog(null,"Nome alterado");
                }
            }
         } 
