@@ -27,12 +27,45 @@ public class ClienteControle {
         Endereço e = new Endereço(CEP,rua,numero,bairro,cidade,estado,pais);
         ArrayList<Cliente>  cliente = cd.ListarClientes();
         for (Cliente c : cliente) {
-            if(c.GetCPF().equals(CPF)){
                c.SetEndereço(e);
+            if(c.GetCPF().equals(CPF)){
             }
     }
     }*/
     
+     public String GetCPFControle(){
+        return cd.GetCPFDAO();
+    }
+     
+     public String GetNomeControle(){
+        return cd.GetNomeDAO();
+    }
+     
+     public String GetEmailControle(){
+        return cd.GetEmailDAO();
+    }
+     
+     public String GetCEPControle(){
+        return cd.GetCEPDAO();
+    }
+     
+     
+     
+     public String GetBairroControle(){
+         return cd.GetBairroDAO();
+     }
+     
+     public String GetCidadeControle(){
+         return cd.GetCidadeDAO();
+     }
+     
+     public String GetEstado(){
+         return cd.GetEstadoDAO();
+     }
+     
+     public String GetPais(){
+         return cd.GetPaisDAO();
+     }    
     public boolean SetCliente(String codCliente,String CPF,String nome,String email,String senha, String CEP,String numero,String Rua,String Bairro,String Cidade, String Estado, String Pais){
         x = ValidaCPF(CPF);
         y = ValidaEmail(email);
@@ -83,22 +116,41 @@ public class ClienteControle {
     }
  
 
-public void ListaClienteControle(){
+public ArrayList ListaClienteControle(){
+    String temp;
    ArrayList<Cliente>  cliente = cd.ListarClientes();
+   ArrayList<String> ct = new ArrayList<>();
    for (Cliente c : cliente) {
-             c.ImprimeCliente();
+             //c.ImprimeCliente();
+             ct.add(" CodCLiente: ");
+            temp = c.GetcodCliente();
+            ct.add(temp);
+            temp = c.GetCPF();
+            ct.add(" CPF: ");
+            ct.add(temp);
+            temp = c.Getnome();
+            ct.add(" Nome: ");
+            ct.add(temp);
+            temp = c.getCEP();
+            ct.add(" CEP: ");
+            ct.add(temp);
+            temp = c.getCidade();
+            ct.add(" Cidade: ");
+            ct.add(temp);
+            temp = c.getEstado();
+            ct.add(" Estado: ");
+            ct.add(temp);
+            temp = c.getPais();
+            ct.add(" Pais: ");
+            ct.add(temp);
+             
    }
+   return ct;
    
 }
 
-public void ListarClienteControle(String nome){
-    ArrayList<Cliente> cliente = cd.ListarClientes();
-    for(Cliente c: cliente){
-        if(c.Getnome().equalsIgnoreCase(nome)){
-            c.ImprimeCliente();
-        }
-    }
-}
+
+
   
 
 }

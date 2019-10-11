@@ -36,6 +36,7 @@ public class Cliente {
         this.Cidade = Cidade;
         this.Estado = Estado;
         this.Pais = Pais;
+       
         //endereço.add(e);
     }
     
@@ -98,19 +99,68 @@ public class Cliente {
           System.out.println("email: "+email);
           
          System.out.println("\nENDEREÇO");
-         System.out.println("CEP:"+CEP);
-         System.out.println("Rua:"+Rua);
-         System.out.println("Numero: "+numero);
-         System.out.println("Bairros: "+Bairro);
-         System.out.println("Cidade: "+Cidade);
-         System.out.println("Estado: "+Estado);
-         System.out.println("País: "+Pais);
+         System.out.println("CEP:"+getCEP());
+         System.out.println("Rua:"+getRua());
+         System.out.println("Numero: "+getNumero());
+         System.out.println("Bairros: "+getBairro());
+         System.out.println("Cidade: "+getCidade());
+         System.out.println("Estado: "+getEstado());
+         System.out.println("País: "+getPais());
          
          /* for (Endereço end : endereço) {
                end.ImprimeEndereço();
             }
 */
       }
+
+    /**
+     * @return the CEP
+     */
+    public String getCEP() {
+        return CEP;
+    }
+
+    /**
+     * @return the numero
+     */
+    public String getNumero() {
+        return numero;
+    }
+
+    /**
+     * @return the Rua
+     */
+    public String getRua() {
+        return Rua;
+    }
+
+    /**
+     * @return the Bairro
+     */
+    public String getBairro() {
+        return Bairro;
+    }
+
+    /**
+     * @return the Cidade
+     */
+    public String getCidade() {
+        return Cidade;
+    }
+
+    /**
+     * @return the Estado
+     */
+    public String getEstado() {
+        return Estado;
+    }
+
+    /**
+     * @return the Pais
+     */
+    public String getPais() {
+        return Pais;
+    }
 
   
 

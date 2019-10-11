@@ -18,6 +18,7 @@ public class ClienteDAO {
    public void ADDClienteDAO(String codCliente,String CPF,String nome,String email,String senha, String CEP,String numero,String Rua,String Bairro,String Cidade, String Estado, String Pais) {
     Cliente c = new Cliente( codCliente,CPF,nome,email,senha,CEP,numero,Rua,Bairro,Cidade,Estado,Pais);
      listaCliente.add(c);
+    // jComboBox1.add(c)
     
 }
 
@@ -32,6 +33,8 @@ public class ClienteDAO {
         }
         return null;
     }
+    
+    
     
     
     public void AlterarCliente(ClienteControle cc,String CPF,String alt,String dado){
@@ -66,7 +69,66 @@ public ArrayList<Cliente> ListarClientes(){
         return listaCliente;      
 }
 
+
+public String GetCPFDAO(){
+   for (Cliente cliente : listaCliente) {
+       return cliente.GetCPF();
+    }
+   return null;
 }
+
+
+public String GetNomeDAO(){
+   for (Cliente cliente : listaCliente) {
+       return cliente.Getnome();
+    }
+   return null;
+}
+
+public String GetEmailDAO(){
+   for (Cliente cliente : listaCliente) {
+       return cliente.GetEmail();
+    }
+   return null;
+}
+
+public String GetCEPDAO(){
+   for (Cliente cliente : listaCliente) {
+       return cliente.getCEP();
+    }
+   return null;
+}
+
+public String GetCidadeDAO(){
+   for (Cliente cliente : listaCliente) {
+       return cliente.getCidade();
+    }
+   return null;
+}
+
+public String GetEstadoDAO(){
+   for (Cliente cliente : listaCliente) {
+       return cliente.getEstado();
+    }
+   return null;
+}
+
+public String GetPaisDAO(){
+   for (Cliente cliente : listaCliente) {
+       return cliente.getPais();
+    }
+   return null;
+}
+
+
+public String GetBairroDAO(){
+    for (Cliente cliente : listaCliente) {
+       return cliente.getBairro();
+    }
+   return null;
+}
+}
+
 
     
 
