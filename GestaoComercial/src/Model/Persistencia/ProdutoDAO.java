@@ -31,7 +31,7 @@ public class ProdutoDAO {
         return p;
     }
     
-    public Produto Altera(String  id, String descricao, Double preco){
+    public Produto Altera(String  id, String descricao, Double preco, int qtd){
         Produto p = Busca(id);
         if (p != null){
             if (descricao != p.getDescricao()){
@@ -39,6 +39,9 @@ public class ProdutoDAO {
             }
             if (preco != p.getPreco()){
                 p.setPreco(preco);
+            }
+            if (qtd != p.getQtd()){
+                p.setQtd(qtd);
             }
             return p;
         }

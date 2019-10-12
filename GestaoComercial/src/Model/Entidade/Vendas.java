@@ -5,20 +5,19 @@ import Controller.ProdutoControle;
 import java.util.ArrayList;
 
 public class Vendas {
-    String codCliente;
-    Endereço end;
-    String DataInicio, Status;
-    String codVenda;
-    ProdutoControle prodControle;
-    ArrayList <Produto> prodven = new ArrayList<Produto>();
+    private String codCliente;
+    private String DataInicio;
+    private String Status;
+    private String codVenda;
     
-    String prod;
-    public Vendas(String codCliente, Endereço end,
-            String DataInicio,String Status,String codVenda,ArrayList <Produto> prodven){
+    private ProdutoControle prodControle;
+    private ArrayList <Produto> prodven = new ArrayList<Produto>();
+    private String prod;
+    public Vendas(String codCliente, String DataInicio,String Status,String codVenda,ArrayList <Produto> prodven){
         
         //this.prodControle = prodControle;
         this.codCliente = codCliente;
-        this.end = end;
+        
         this.DataInicio = DataInicio;
         
         this.codVenda = codVenda;
@@ -29,20 +28,53 @@ public class Vendas {
     
     
     public void SetStatus (String Status){
-        this.Status = Status;
+        this.setStatus(Status);
     }
     
     
  
     
     public void ImprimeVenda(){
-        for(Produto p: prodven) {
+        System.out.println("codVenda: "+getCodVenda());
+        System.out.println("Status:"+getStatus());
+        System.out.println("DataInicio: "+getDataInicio());
+        for(Produto p: getProdven()) {
             p.ImprimeProduto();
         }
-        end.ImprimeEndereço();
-        System.out.println("DataInicio: "+DataInicio);
-        System.out.println("codVenda: "+codVenda);
-        System.out.println("Status:"+Status);
+        
+        
+    }
+
+    public String getCodCliente() {
+        return codCliente;
+    }
+
+    public String getDataInicio() {
+        return DataInicio;
+    }
+
+    public String getStatus() {
+        return Status;
+    }
+
+    public void setStatus(String Status) {
+        this.Status = Status;
+    }
+
+    public String getCodVenda() {
+        return codVenda;
+    }
+
+    public ProdutoControle getProdControle() {
+        return prodControle;
+    }
+
+    public ArrayList <Produto> getProdven() {
+        return prodven;
+    }
+
+    public String getProd() {
+        return prod;
     }
     
 }

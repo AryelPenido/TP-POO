@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 public class ClienteDAO {
     
-   public  ArrayList <Cliente> listaCliente = new ArrayList();
+   public ArrayList <Cliente> listaCliente = new ArrayList();
     
     
    public void ADDClienteDAO(String codCliente,String CPF,String nome,String email,String senha, String CEP,String numero,String Rua,String Bairro,String Cidade, String Estado, String Pais) {

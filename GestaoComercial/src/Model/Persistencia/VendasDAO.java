@@ -2,13 +2,12 @@
 package Model.Persistencia;
 import Controller.ProdutoControle;
 import Model.Entidade.Cliente;
-import Model.Entidade.Endereço;
 import Model.Entidade.Produto;
 import Model.Entidade.Vendas;
 import java.util.ArrayList;
 
 public class VendasDAO {
-     ArrayList <Vendas> historico;
+    private final ArrayList <Vendas> historico;
     
     public VendasDAO(){
         System.out.println("vendas DAO");
@@ -16,8 +15,8 @@ public class VendasDAO {
     }
     
 
-    public void AddVendas (String codCliente, Endereço end, String DataInicio, String Status,String codVenda,ArrayList <Produto> prodven){
-        Vendas venda = new Vendas(codCliente,end,DataInicio,Status,codVenda,prodven);
+    public void AddVendas (String codCliente, String DataInicio, String Status,String codVenda,ArrayList <Produto> prodven){
+        Vendas venda = new Vendas(codCliente,DataInicio,Status,codVenda,prodven);
         //venda.ImprimeVenda();
         historico.add(venda);
         
@@ -27,5 +26,7 @@ public class VendasDAO {
     public ArrayList<Vendas> ListarVendas(){
         return historico;
     }
+    
+    
     
 }

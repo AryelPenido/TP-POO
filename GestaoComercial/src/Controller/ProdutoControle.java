@@ -31,8 +31,8 @@ public class ProdutoControle {
         
     }
     
-    public Produto Altera(String id, String descricao, Double preco){
-        return produtoDao.Altera(id, descricao, preco);
+    public Produto Altera(String id, String descricao, Double preco, int qtd){
+        return produtoDao.Altera(id, descricao, preco, qtd);
     }
     
     public ArrayList<Produto> ListarTodos(){

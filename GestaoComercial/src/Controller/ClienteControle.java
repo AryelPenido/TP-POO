@@ -85,37 +85,68 @@ public class ClienteControle {
 
 
 
-public ArrayList ListaClienteControle(){
-    String temp;
-   ArrayList<Cliente>  cliente = cd.ListarClientes();
-   ArrayList<String> ct = new ArrayList<>();
-   for (Cliente c : cliente) {
-             //c.ImprimeCliente();
-             ct.add(" CodCLiente: ");
-            temp = c.GetcodCliente();
-            ct.add(temp);
-            temp = c.GetCPF();
-            ct.add(" CPF: ");
-            ct.add(temp);
-            temp = c.Getnome();
-            ct.add(" Nome: ");
-            ct.add(temp);
-            temp = c.getCEP();
-            ct.add(" CEP: ");
-            ct.add(temp);
-            temp = c.getCidade();
-            ct.add(" Cidade: ");
-            ct.add(temp);
-            temp = c.getEstado();
-            ct.add(" Estado: ");
-            ct.add(temp);
-            temp = c.getPais();
-            ct.add(" Pais: ");
-            ct.add(temp);
-             
-   }
-   return ct;
-   
+    public ArrayList ListaClienteControle(){
+        String temp;
+       ArrayList<Cliente>  cliente = cd.ListarClientes();
+       ArrayList<String> ct = new ArrayList<>();
+       for (Cliente c : cliente) {
+                 //c.ImprimeCliente();
+                ct.add(" CodCLiente: ");
+                temp = c.GetcodCliente();
+                ct.add(temp);
+                temp = c.GetCPF();
+                ct.add(" CPF: ");
+                ct.add(temp);
+                temp = c.Getnome();
+                ct.add(" Nome: ");
+                ct.add(temp);
+                temp = c.getCEP();
+                ct.add(" CEP: ");
+                ct.add(temp);
+                temp = c.getCidade();
+                ct.add(" Cidade: ");
+                ct.add(temp);
+                temp = c.getEstado();
+                ct.add(" Estado: ");
+                ct.add(temp);
+                temp = c.getPais();
+                ct.add(" Pais: ");
+                ct.add(temp);
 
-}
+       }
+       return ct;
+
+    }
+    public ArrayList Busca(String id){
+        String temp;
+        ArrayList<String> ct = new ArrayList<>();
+        Cliente c = cd.getCliente(id);
+        ct.add(" CodCLiente: ");
+        temp = c.GetcodCliente();
+        ct.add(temp);
+        temp = c.GetCPF();
+        ct.add(" CPF: ");
+        ct.add(temp);
+        temp = c.Getnome();
+        ct.add(" Nome: ");
+        ct.add(temp);
+        temp = c.getCEP();
+        ct.add(" CEP: ");
+        ct.add(temp);
+        temp = c.getCidade();
+        ct.add(" Cidade: ");
+        ct.add(temp);
+        temp = c.getEstado();
+        ct.add(" Estado: ");
+        ct.add(temp);
+        temp = c.getPais();
+        ct.add(" Pais: ");
+        ct.add(temp);
+        return ct;
+    }
+    
+    public Cliente BuscaC(String id){
+        Cliente ct = cd.getCliente(id);
+        return ct;
+    }
 }
